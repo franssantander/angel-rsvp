@@ -6,11 +6,12 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const navLinks = [
-    { name: "Home", link: "/" },
-    { name: "Attire", link: "/atire" },
-    { name: "Gifts", link: "/gifts" },
-    { name: "Location", link: "/location" },
-    { name: "Rvsp", link: "/rvsp" },
+    { name: "Home", link: "#home" },
+    { name: "Parts", link: "#parts" },
+    { name: "Attire", link: "#attire" },
+    { name: "Gifts", link: "#gifts" },
+    { name: "Location", link: "#location" },
+    { name: "Rvsp", link: "#rvsp" },
   ];
 
   return (
@@ -21,8 +22,7 @@ export default function Navbar() {
             <li
               key={navlink.name}
               className={`lg:text-lg ease-in-out duration-200 
-            ${pathname === navlink.link ? "text-rose-500" : "text-white"} 
-            hover:text-rose-500`}
+            hover:text-rose-500 text-white`}
             >
               <a href={navlink.link}>{navlink.name}</a>
             </li>
