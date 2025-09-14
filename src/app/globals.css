@@ -135,3 +135,19 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px #e11d48, 0 0 10px #e11d48, 0 0 20px #e11d48;
+    background-color: #e11d48; /* rose-600 */
+  }
+  50% {
+    box-shadow: 0 0 20px #f43f5e, 0 0 30px #f43f5e, 0 0 40px #f43f5e;
+    background-color: #f43f5e; /* rose-500 */
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}

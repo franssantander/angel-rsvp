@@ -40,7 +40,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="flex items-center gap-x-2">
-            <div className="relative w-64 h-64">
+            <div className="hidden sm:block sm:relative w-64 h-64">
               <Image
                 src="/assets/angel_1.webp"
                 alt="Angel Photo 1"
@@ -64,7 +64,7 @@ export default function Hero() {
             mean the most to us. Your presence will truly make the celebration
             complete.
           </p>
-          <Button>
+          <Button className="animate-glow flex items-center gap-2">
             <Icon icon="tabler:mail-heart" />
             RSVP Now
           </Button>
