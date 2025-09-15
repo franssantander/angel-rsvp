@@ -13,6 +13,10 @@ import React from "react";
 import parts from "@/data/parts.json";
 
 export default function page() {
+  const gentleMensData = parts.gentlemens;
+  const treasuresData = parts.treasures;
+  const blueBillsData = parts.blue_bills;
+  const candlesData = parts.candles;
   return (
     <>
       <Navbar />
@@ -21,7 +25,32 @@ export default function page() {
           <Hero />
         </section>
         <section id="parts" className="h-screen scroll-snap-start">
-          <Parts parts={parts} />
+          <Parts
+            title="Steps With Gentlemen"
+            img="/assets/parts-img.jpg"
+            data={gentleMensData}
+          />
+        </section>
+        <section className="h-screen scroll-snap-start">
+          <Parts
+            title="Treasures"
+            img="/assets/parts-img.jpg"
+            data={treasuresData}
+          />
+        </section>
+        <section className="h-screen scroll-snap-start">
+          <Parts
+            title="Blue Bills"
+            img="/assets/parts-img.jpg"
+            data={blueBillsData}
+          />
+        </section>
+        <section className="h-screen scroll-snap-start">
+          <Parts
+            title="Candle of Wisdom"
+            img="/assets/parts-img.jpg"
+            data={candlesData}
+          />
         </section>
         <section id="attire" className="h-screen scroll-snap-start">
           <Attire />

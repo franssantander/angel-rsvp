@@ -4,7 +4,7 @@
       "name": "Adrielle Aragon"
     },
     {
-      "name": "Gabriel Santander"
+      "name": "Gabrielle Santander"
     },
     {
       "name": "Francis Santander"
@@ -13,7 +13,22 @@
       "name": "Vince Santander"
     },
     {
+      "name": "Wilson Santander"
+    },
+    {
+      "name": "Kyle Aragon"
+    },
+    {
+      "name": "Kenneth Aragon"
+    },
+    {
+      "name": "Daryll Rafael"
+    },
+    {
       "name": "Sean Loreizo"
+    },
+    {
+      "name": "Cristian Pasuquin"
     },
     {
       "name": "Kallen Cain"
@@ -37,7 +52,7 @@
       "name": "Mark Reyes"
     },
     {
-      "name": "Rizalito Aragon "
+      "name": "Rizalito Aragon"
     }
   ],
   "candles": [
@@ -48,7 +63,7 @@
       "name": "Althea Aragon"
     }
   ],
-  "Treasures_1": [
+  "treasures": [
     {
       "name": "Marianne Patana"
     },
@@ -80,24 +95,10 @@
       "name": "Bien Bautista"
     },
     {
-      "name": "Sophia Abad"
-    },
-    {
-      "name": "Zeeke Gallardo "
-    }
-  ],
-  "Treasures_2": [
-    {
-      "name": "Clyde Abad"
-    },
-    {
       "name": "Stephanie Baluyot"
     },
     {
-      "name": "Sarah Escosura"
-    },
-    {
-      "name": "Harline Sarmiento"
+      "name": "Saccharine Villanueva"
     },
     {
       "name": "Paula Romey"
@@ -106,10 +107,10 @@
       "name": "Monica Chua"
     },
     {
-      "name": "Marianne Bermundo"
+      "name": "Harline Sarmiento"
     },
     {
-      "name": "Alliyah Bianca"
+      "name": "Marianne Bermundo"
     },
     {
       "name": "Alodhiean Parish"
@@ -118,45 +119,60 @@
       "name": "Wendi Santander"
     }
   ],
-  "bills": [
+  "blue_bills": [
     {
-      "name": "Ystal Rafel"
+      "name": "Ms. Ystal Rafael"
     },
     {
-      "name": "Kaycee Rafael"
+      "name": "Mrs. Kaycee Rafael"
     },
     {
-      "name": "Mj Reyes"
+      "name": "Mrs. Mini Joy Reyes"
     },
     {
-      "name": "Tess Santander"
+      "name": "Mrs. Marites Arboleda"
     },
     {
-      "name": "Luie Aragon"
+      "name": "Mrs. Lorna Apostol"
     },
     {
-      "name": "Perla Santander"
+      "name": "Mrs. Merlyn Gallardo"
     },
     {
-      "name": "Merlyn gallardo"
+      "name": "Mrs. Carina Taleon"
     },
     {
-      "name": "Karina Taleon"
+      "name": "Mrs. Jane Anuat"
     },
     {
-      "name": "Jane Anuat"
+      "name": "Mrs. Ma. Teresa Collantes"
     },
     {
-      "name": "Teresa Muhamad"
+      "name": "Mr. Glenwey Fuentes"
     },
     {
-      "name": "Lorna Apostol"
+      "name": "Mr. Luie Aragon"
     },
     {
-      "name": "Glentong Fuentes"
+      "name": "Mrs.Tess Santander"
     },
     {
-      "name": "Tess Aboleda"
+      "name": "Mrs.Perla Santander"
+    },
+    {
+      "name": "Ms. Alliyah Bianca"
+    },
+    {
+      "name": "Ms. Audrey Aragon"
+    },
+    {
+      "name": "Mr. Mark Inoc"
+    },
+    {
+      "name": "Mr. Rufo Patigdas"
+    },
+    {
+      "name": "Mrs. Christina Chavez"
     }
   ]
 }
