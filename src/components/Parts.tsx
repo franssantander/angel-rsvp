@@ -81,7 +81,7 @@ export default function Parts({
             ${columns.length >= 3 ? "md:grid-cols-3" : ""}`}
         >
           {columns.map((col, colIdx) => (
-            <div key={colIdx} className="flex flex-col gap-2">
+            <div key={colIdx} className="flex flex-col gap-4">
               {col.map((dat, idx) => (
                 <motion.div
                   key={idx}

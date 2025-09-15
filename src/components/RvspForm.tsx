@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/select";
 import { Button } from "./ui/button";
 import { supabase } from "@/lib/supabaseClient";
+import { toast } from "sonner";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function RvspForm() {
   const [form, setForm] = useState({
@@ -46,29 +48,67 @@ export default function RvspForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validate()) return; // stop submission if errors
+    if (!validate()) return;
 
     setLoading(true);
 
-    const { error } = await supabase.from("rsvps").insert([
-      {
-        full_name: form.fullName,
-        email: form.email,
-        guests: parseInt(form.guests, 10),
-        attending: form.attending === "true",
-      },
-    ]);
+    try {
+      // 🔍 Check if full name already exists
+      const { data: existing, error: fetchError } = await supabase
+        .from("rsvps")
+        .select("id")
+        .eq("full_name", form.fullName)
+        .single();
 
-    if (error) {
-      console.error("Error inserting RSVP:", error.message);
-      alert("Something went wrong. Please try again.");
-    } else {
-      alert("Thank you for your RSVP!");
+      if (fetchError && fetchError.code !== "PGRST116") {
+        console.error("Error checking RSVP:", fetchError.message);
+        toast.error("Oops! Something went wrong. Please try again.");
+        setLoading(false);
+        return;
+      }
+
+      if (existing) {
+        // ✏️ Update attending only
+        const { error: updateError } = await supabase
+          .from("rsvps")
+          .update({ attending: form.attending === "true" })
+          .eq("id", existing.id);
+
+        if (updateError) {
+          console.error("Error updating RSVP:", updateError.message);
+          toast.error("Oops! Something went wrong. Please try again.");
+        } else {
+          toast.success("✅ RSVP updated successfully!");
+        }
+      } else {
+        const { error: insertError } = await supabase.from("rsvps").insert([
+          {
+            full_name: form.fullName,
+            email: form.email,
+            guests: parseInt(form.guests, 10),
+            attending: form.attending === "true",
+          },
+        ]);
+
+        if (insertError) {
+          console.error("Error inserting RSVP:", insertError.message);
+          toast.error("Oops! Something went wrong. Please try again.");
+        } else {
+          toast.success(
+            "🎉 Thank you for your RSVP! We can’t wait to celebrate with you."
+          );
+        }
+      }
+
+      // Reset form
       setForm({ fullName: "", email: "", guests: "", attending: "" });
       setErrors({});
+    } catch (err) {
+      console.error("Unexpected error:", err);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
@@ -146,7 +186,17 @@ export default function RvspForm() {
       {/* Submit */}
       <div className="flex justify-end">
         <Button type="submit" disabled={loading}>
-          {loading ? "Submitting..." : "Submit"}
+          {loading && (
+            <>
+              <Icon
+                icon="radix-icons:reload"
+                className="mr-1 animate-spin"
+                fontSize={14}
+              />
+              Submitting...
+            </>
+          )}
+          {!loading && "Submit RSVP"}
         </Button>
       </div>
     </form>

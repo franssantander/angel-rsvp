@@ -6,7 +6,7 @@ export default function Navbar() {
     { name: "Attire", link: "#attire" },
     { name: "Gifts", link: "#gifts" },
     { name: "Location", link: "#location" },
-    { name: "Rvsp", link: "#rvsp" },
+    { name: "Rsvp", link: "#rsvp" },
   ];
 
   return (

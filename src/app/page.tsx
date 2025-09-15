@@ -34,21 +34,21 @@ export default function page() {
         <section className="h-screen scroll-snap-start">
           <Parts
             title="Treasures"
-            img="/assets/parts-img.jpg"
+            img="/assets/treasures-img.jpg"
             data={treasuresData}
           />
         </section>
         <section className="h-screen scroll-snap-start">
           <Parts
             title="Blue Bills"
-            img="/assets/parts-img.jpg"
+            img="/assets/bills-img.jpg"
             data={blueBillsData}
           />
         </section>
         <section className="h-screen scroll-snap-start">
           <Parts
             title="Candle of Wisdom"
-            img="/assets/parts-img.jpg"
+            img="/assets/candles-img.jpeg"
             data={candlesData}
           />
         </section>
@@ -61,7 +61,7 @@ export default function page() {
         <section id="location" className="h-screen scroll-snap-start">
           <WhenWhere />
         </section>
-        <section id="rvsp" className="h-screen scroll-snap-start">
+        <section id="rsvp" className="h-screen scroll-snap-start">
           <Attending />
         </section>
         <Welcome />
