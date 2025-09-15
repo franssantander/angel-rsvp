@@ -392,7 +392,11 @@ export default function Hero() {
                         )}
                       </div>
                       <DialogFooter>
-                        <Button type="submit" className="w-full">
+                        <Button
+                          type="submit"
+                          className="w-full"
+                          disabled={loading}
+                        >
                           {loading && (
                             <>
                               <Icon
