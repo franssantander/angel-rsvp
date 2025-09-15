@@ -53,7 +53,7 @@ export default function WhenWhere() {
                       <Separator className="bg-neutral-300 w-full h-[1px]" />
                       <div className="font-geist text-xs text-neutral-500 flex items-center gap-x-2">
                         <Icon icon="tabler:clock" fontSize={16} />
-                        12:00 PM to 6:00 PM
+                        10:30 AM to 3:00 PM
                       </div>
                     </div>
                   </div>
