@@ -24,28 +24,28 @@ export default function page() {
         <section id="home" className="h-screen scroll-snap-start">
           <Hero />
         </section>
-        <section id="parts" className="h-screen scroll-snap-start">
+        <section id="parts" className="min-h-screen lg:h-screen scroll-snap-start">
           <Parts
             title="Steps With Gentlemen"
             img="/assets/parts-img.jpg"
             data={gentleMensData}
           />
         </section>
-        <section className="h-screen scroll-snap-start">
+        <section className="min-h-screen lg:h-screen scroll-snap-start">
           <Parts
             title="Treasures"
             img="/assets/treasures-img.jpg"
             data={treasuresData}
           />
         </section>
-        <section className="h-screen scroll-snap-start">
+        <section className="min-h-screen lg:h-screen scroll-snap-start">
           <Parts
             title="Blue Bills"
             img="/assets/bills-img.jpg"
             data={blueBillsData}
           />
         </section>
-        <section className="h-screen scroll-snap-start">
+        <section className="min-h-screen lg:h-screen scroll-snap-start">
           <Parts
             title="Candle of Wisdom"
             img="/assets/candles-img.jpeg"

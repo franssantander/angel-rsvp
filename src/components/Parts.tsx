@@ -42,7 +42,7 @@ export default function Parts({
   const columns = chunkArray(data || [], 6);
 
   return (
-    <section className="relative h-full py-20 lg:h-screen w-full overflow-hidden">
+    <section className="relative h-full py-20 w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -57,7 +57,7 @@ export default function Parts({
       <div className="absolute inset-0 bg-black/60" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col gap-y-14 items-center justify-center h-full text-center px-4">
+      <div className="relative z-10 flex flex-col gap-y-14 items-center justify-center min-h-screen text-center px-4">
         {/* Title */}
         <motion.h1
           initial={{ opacity: 0, scale: 0.9 }}
@@ -76,9 +76,9 @@ export default function Parts({
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
           className={`grid gap-6 max-w-4xl mx-auto w-full text-center
-            ${columns.length === 1 ? "grid-cols-1" : ""}
-            ${columns.length === 2 ? "grid-cols-2" : ""}
-            ${columns.length >= 3 ? "md:grid-cols-3" : ""}`}
+        ${columns.length === 1 ? "grid-cols-1" : ""}
+        ${columns.length === 2 ? "grid-cols-2" : ""}
+        ${columns.length >= 3 ? "md:grid-cols-3" : ""}`}
         >
           {columns.map((col, colIdx) => (
             <div key={colIdx} className="flex flex-col gap-4">

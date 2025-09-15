@@ -10,7 +10,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="my-10 md:my-5 absolute z-30 justify-center items-center mx-auto w-full">
+    <div className="my-10 md:my-5 hidden sm:block absolute z-30 justify-center items-center mx-auto w-full">
       <nav>
         <ul className="flex items-center space-x-6 justify-center lg:space-x-14">
           {navLinks.map((navlink) => (
