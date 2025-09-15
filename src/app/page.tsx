@@ -58,10 +58,10 @@ export default function page() {
         <section id="gifts" className="h-screen scroll-snap-start">
           <Gifts />
         </section>
-        <section id="location" className="h-screen scroll-snap-start">
+        <section id="location" className="min-h-screen lg:h-screen scroll-snap-start">
           <WhenWhere />
         </section>
-        <section id="rsvp" className="h-screen scroll-snap-start">
+        <section id="rsvp" className="min-h-screen lg:h-screen scroll-snap-start">
           <Attending />
         </section>
         <Welcome />
