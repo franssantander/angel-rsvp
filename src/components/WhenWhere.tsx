@@ -48,7 +48,7 @@ export default function WhenWhere() {
                           <Icon icon="tabler:cake" fontSize={24} />
                           <h1 className="font-black text-2xl">Celebration</h1>
                         </div>
-                        <p>622 Shaw Blvd, Makati City, 1552, Philippines</p>
+                        <p>622 Shaw Blvd, Mandaluyong City, 1552 Metro Manila</p>
                       </div>
                       <Separator className="bg-neutral-300 w-full h-[1px]" />
                       <div className="font-geist text-xs text-neutral-500 flex items-center gap-x-2">
