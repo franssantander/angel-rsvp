@@ -83,6 +83,10 @@ export default function Hero() {
       newErrors.email = "Please enter a valid email.";
     }
 
+    if (!form.attending) {
+      newErrors.attending = "Please select an option.";
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
