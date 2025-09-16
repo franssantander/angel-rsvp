@@ -27,7 +27,7 @@ export default function WhenWhere() {
             <div>
               <Card className="p-1">
                 <CardContent className="grid grid-cols gap-y-4 p-3">
-                  <div className="grid grid-cols-2 items-center gap-3">
+                  <div className="grid grid-cols-2 items-center gap-2">
                     <div className="h-44">
                       <div className="relative w-full h-full">
                         <h1 className="absolute bottom-0 z-20 font-black text-6xl bg-[#B10000] m-3 p-2 text-white flex flex-col items-center">
@@ -42,7 +42,7 @@ export default function WhenWhere() {
                         />
                       </div>
                     </div>
-                    <div className="text-left space-y-6">
+                    <div className="text-left space-y-3">
                       <div>
                         <div>
                           <Icon icon="tabler:cake" fontSize={24} />

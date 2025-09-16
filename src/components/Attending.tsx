@@ -1,9 +1,8 @@
 import React from "react";
-import RvspForm from "./RvspForm";
 
 export default function Attending() {
   return (
-    <section className="relative h-full w-full py-10 md:py-24">
+    <section className="relative h-full w-full py-20 md:py-24">
       <div className="px-4 max-w-7xl m-auto relative z-10 flex flex-col items-center gap-y-4 justify-center h-full text-center">
         <div className="grid grid-cols gap-y-14">
           <h1 className="text-4xl font-bold">ARE YOU ATTENDING?</h1>
@@ -14,7 +13,6 @@ export default function Attending() {
             your place at this special celebration.
           </p>
         </div>
-        <RvspForm />
       </div>
     </section>
   );

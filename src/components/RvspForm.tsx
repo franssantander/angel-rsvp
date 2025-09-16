@@ -19,7 +19,6 @@ export default function RvspForm() {
   const [form, setForm] = useState({
     fullName: "",
     email: "",
-    guests: "",
     attending: "",
   });
   const [loading, setLoading] = useState(false);
@@ -38,7 +37,6 @@ export default function RvspForm() {
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
       newErrors.email = "Please enter a valid email.";
     }
-    if (!form.guests.trim()) newErrors.guests = "Number of guests is required.";
     if (!form.attending) newErrors.attending = "Please select an option.";
 
     setErrors(newErrors);
@@ -85,7 +83,6 @@ export default function RvspForm() {
           {
             full_name: form.fullName,
             email: form.email,
-            guests: parseInt(form.guests, 10),
             attending: form.attending === "true",
           },
         ]);
@@ -101,7 +98,7 @@ export default function RvspForm() {
       }
 
       // Reset form
-      setForm({ fullName: "", email: "", guests: "", attending: "" });
+      setForm({ fullName: "", email: "", attending: "" });
       setErrors({});
     } catch (err) {
       console.error("Unexpected error:", err);
@@ -143,22 +140,6 @@ export default function RvspForm() {
           />
           {errors.email && (
             <p className="text-red-500 text-sm text-left">{errors.email}</p>
-          )}
-        </div>
-
-        {/* Guests */}
-        <div className="grid w-xs items-center gap-2 font-geist">
-          <Label htmlFor="guests">Number of guests</Label>
-          <Input
-            type="number"
-            id="guests"
-            name="guests"
-            placeholder="Enter number of guests"
-            value={form.guests}
-            onChange={handleChange}
-          />
-          {errors.guests && (
-            <p className="text-red-500 text-sm text-left">{errors.guests}</p>
           )}
         </div>
 

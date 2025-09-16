@@ -42,7 +42,7 @@ export default function Parts({
   const columns = chunkArray(data || [], 6);
 
   return (
-    <section className="relative h-full py-20 w-full overflow-hidden">
+    <section className="relative h-full py-24 w-full md:py-0 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image

@@ -51,7 +51,6 @@ export default function Hero() {
   const [form, setForm] = useState({
     fullName: "",
     email: "",
-    guests: "",
     attending: "",
   });
   const [loading, setLoading] = useState(false);
@@ -83,8 +82,6 @@ export default function Hero() {
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
       newErrors.email = "Please enter a valid email.";
     }
-    if (!form.guests.trim()) newErrors.guests = "Number of guests is required.";
-    if (!form.attending) newErrors.attending = "Please select an option.";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -129,7 +126,6 @@ export default function Hero() {
           {
             full_name: form.fullName,
             email: form.email,
-            guests: parseInt(form.guests, 10),
             attending: form.attending === "true",
           },
         ]);
@@ -145,7 +141,7 @@ export default function Hero() {
       }
 
       // Reset form
-      setForm({ fullName: "", email: "", guests: "", attending: "" });
+      setForm({ fullName: "", email: "", attending: "" });
       setErrors({});
     } catch (err) {
       console.error("Unexpected error:", err);
@@ -307,7 +303,7 @@ export default function Hero() {
                       <DialogDescription className="text-sm text-muted-foreground">
                         Kindly RSVP by{" "}
                         <span className="font-semibold text-rose-500">
-                          September 18
+                          September 28
                         </span>{" "}
                         so we can prepare to welcome you with comfort and care.
                         We’ll be delighted to reserve your place at this special
@@ -350,22 +346,6 @@ export default function Hero() {
                         )}
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="guests">No. of Guests</Label>
-                        <Input
-                          id="guests"
-                          name="guests"
-                          type="number"
-                          placeholder="e.g. 2"
-                          value={form.guests}
-                          onChange={handleChange}
-                        />
-                        {errors.guests && (
-                          <p className="text-red-500 text-sm text-left">
-                            {errors.guests}
-                          </p>
-                        )}
-                      </div>
-                      <div className="space-y-2">
                         <Label htmlFor="attending">Will you attend?</Label>
                         <Select
                           value={form.attending}
@@ -385,9 +365,9 @@ export default function Hero() {
                             </SelectItem>
                           </SelectContent>
                         </Select>
-                        {errors.guests && (
+                        {errors.attending && (
                           <p className="text-red-500 text-sm text-left">
-                            {errors.guests}
+                            {errors.attending}
                           </p>
                         )}
                       </div>

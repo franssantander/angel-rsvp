@@ -52,7 +52,7 @@ export default function Gifts() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="max-w-2xl text-2xl/12"
+            className="max-w-2xl text-base md:text-2xl/12"
           >
             Your presence is already the most meaningful gift to us, and we are
             truly grateful just to have you there. Should you wish to share

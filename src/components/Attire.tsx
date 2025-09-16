@@ -52,13 +52,22 @@ export default function Attire() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="max-w-2xl text-2xl/12"
+            className="max-w-2xl text-base md:text-2xl/12"
           >
             The dress code is Semi-formal / Smart casual. All 18 Special is
             required to wear semi-formal attire. We’d love for you to come
-            dressed in something that makes you feel confident, comfortable,
-            and ready to celebrate. Feel free to add your personal style!
+            dressed in something that makes you feel confident, comfortable, and
+            ready to celebrate. Feel free to add your personal style!
           </motion.p>
+          <div className="flex justify-center">
+            <Image
+              width={380}
+              height={380}
+              src="/assets/color-palette.png"
+              alt="Collor palette Image"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>

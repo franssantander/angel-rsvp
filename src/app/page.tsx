@@ -20,11 +20,14 @@ export default function page() {
   return (
     <>
       <Navbar />
-      <main className="h-screen overflow-y-scroll scroll-smooth scroll-snap-y scroll-snap-mandatory">
+      <main className="h-full scroll-smooth scroll-snap-y scroll-snap-mandatory">
         <section id="home" className="h-screen scroll-snap-start">
           <Hero />
         </section>
-        <section id="parts" className="min-h-screen lg:h-screen scroll-snap-start">
+        <section
+          id="parts"
+          className="min-h-screen lg:h-screen scroll-snap-start"
+        >
           <Parts
             title="Steps With Gentlemen"
             img="/assets/parts-img.jpg"
@@ -58,10 +61,10 @@ export default function page() {
         <section id="gifts" className="h-screen scroll-snap-start">
           <Gifts />
         </section>
-        <section id="location" className="min-h-screen lg:h-screen scroll-snap-start">
+        <section id="location" className="h-full scroll-snap-start">
           <WhenWhere />
         </section>
-        <section id="rsvp" className="min-h-screen lg:h-screen scroll-snap-start">
+        <section className="h-full scroll-snap-start">
           <Attending />
         </section>
         <Welcome />
