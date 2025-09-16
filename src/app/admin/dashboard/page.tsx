@@ -1,59 +1,79 @@
-// app/dashboard/page.tsx
-import { createClient } from "@/lib/server";
-import { redirect } from "next/navigation";
+"use client";
 
-export default async function DashboardPage() {
-  const supabase = await createClient();
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { createClient } from "@supabase/supabase-js";
+import RsvpTable from "./_component/RvspTable";
+import { Button } from "@/components/ui/button";
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
+interface SessionUser {
+  id: string;
+  email: string | undefined;
+}
 
-  // 🚨 Redirect if no session
-  if (!session) {
-    redirect("/login");
-  }
+interface Session {
+  user: SessionUser;
+}
 
-  // ✅ Fetch RSVP data
-  const { data: rsvpList, error } = await supabase
-    .from("rsvps")
-    .select("id, full_name, attending");
+interface Rsvp {
+  id: number;
+  full_name: string;
+  attending: boolean;
+}
 
-  if (error) {
-    console.error("Error fetching RSVPs:", error.message);
-  }
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SP_URL!,
+  process.env.NEXT_PUBLIC_SP_ANON!
+);
+
+export default function DashboardPage() {
+  const router = useRouter();
+
+  const [session, setSession] = useState<Session | null>(null);
+  const [rsvpList, setRsvpList] = useState<Rsvp[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchSessionAndData = async () => {
+      const { data } = await supabase.auth.getSession();
+
+      if (!data.session) {
+        router.push("/login");
+        return;
+      }
+
+      setSession({
+        user: { id: data.session.user.id, email: data.session.user.email },
+      });
+
+      const { data: list } = await supabase
+        .from("rsvps")
+        .select("id, full_name, attending");
+
+      setRsvpList(list as Rsvp[]);
+    };
+
+    fetchSessionAndData();
+  }, [router]);
+
+  if (!session) return null;
+
+  const handleLogout = async () => {
+    setLoading(true);
+    await supabase.auth.signOut();
+    router.push("/login");
+  };
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+    <div className="md:p-6 w-full h-full">
+      <div className="flex items-center justify-between mb-4">
+        <h1 className="text-2xl font-bold">Dashboard</h1>
+        <Button size="sm" variant="outline" onClick={handleLogout} disabled={loading}>
+          {loading ? "Logging out..." : "Logout"}
+        </Button>
+      </div>
       <p className="mb-6">Welcome, {session.user.email}!</p>
-
-      <table className="w-full border-collapse border border-gray-300">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="border border-gray-300 px-4 py-2 text-left">#</th>
-            <th className="border border-gray-300 px-4 py-2 text-left">
-              Full Name
-            </th>
-            <th className="border border-gray-300 px-4 py-2 text-left">
-              Attending
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {rsvpList?.map((row, idx) => (
-            <tr key={row.id}>
-              <td className="border border-gray-300 px-4 py-2">{idx + 1}</td>
-              <td className="border border-gray-300 px-4 py-2">
-                {row.full_name}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {row.attending ? "✅ Yes" : "❌ No"}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <RsvpTable rsvpList={rsvpList} />
     </div>
   );
 }

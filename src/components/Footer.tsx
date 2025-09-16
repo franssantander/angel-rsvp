@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-7 space-y-3 font-geist">
+    <footer className="bg-black text-white py-5 space-y-2 font-geist">
       <div className="flex items-center justify-center">
         <a
           href="https://fransbeam-portfolio.vercel.app/"
