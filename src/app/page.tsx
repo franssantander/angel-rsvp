@@ -1,3 +1,5 @@
+"use client";
+
 import Attending from "@/components/Attending";
 import Attire from "@/components/Attire";
 import Footer from "@/components/Footer";

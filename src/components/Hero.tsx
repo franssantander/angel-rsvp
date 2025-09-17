@@ -36,6 +36,7 @@ type Leaf = {
   rotate: number;
 };
 
+
 // const leaves = Array.from({ length: 8 }).map((_, i) => ({
 //   id: i,
 //   left: `${Math.random() * 100}%`,
@@ -192,6 +193,14 @@ export default function Hero() {
       )),
     [leaves]
   );
+
+  // if (!loaded) {
+  //   return (
+  //     <section className="h-screen w-full bg-black flex items-center justify-center text-white">
+  //       {/* Optional placeholder while waiting */}
+  //     </section>
+  //   );
+  // }
 
   return (
     <>
@@ -416,7 +425,7 @@ export default function Hero() {
                 hidden: { opacity: 0, x: -50, rotate: -3 },
                 visible: { opacity: 1, x: 0, rotate: 0 },
               }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 3 }}
               className="hidden sm:block relative flex-1 aspect-[4/5] max-w-[44%]"
             >
               <Image
@@ -433,7 +442,7 @@ export default function Hero() {
                 hidden: { opacity: 0, x: 50, rotate: 3 },
                 visible: { opacity: 1, x: 0, rotate: 0 },
               }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 3 }}
               className="hidden sm:block relative w-full aspect-[4/5] sm:flex-1 sm:max-w-[44%]"
             >
               <Image
