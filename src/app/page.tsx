@@ -1,15 +1,12 @@
-"use client";
-
 import Attending from "@/components/Attending";
 import Attire from "@/components/Attire";
 import Footer from "@/components/Footer";
 import Gifts from "@/components/Gifts";
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
+// import Navbar from "@/components/Navbar";
 import Parts from "@/components/Parts";
 import Welcome from "@/components/Welcome";
 import WhenWhere from "@/components/WhenWhere";
-import React from "react";
 import parts from "@/data/parts.json";
 
 export default function page() {
@@ -17,9 +14,10 @@ export default function page() {
   const treasuresData = parts.treasures;
   const blueBillsData = parts.blue_bills;
   const candlesData = parts.candles;
+
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="h-full scroll-smooth scroll-snap-y scroll-snap-mandatory">
         <section id="home" className="h-screen scroll-snap-start">
           <Hero />

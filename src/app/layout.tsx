@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import Preloader from "@/components/Preloader";
+import loadImg from "@/data/preLoadImg.json";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,12 +40,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const preloadImages = loadImg;
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${dancingScript.variable} antialiased`}
       >
-        {children}
+        <Preloader images={preloadImages}>{children}</Preloader>
         <Toaster position="top-right" />
       </body>
     </html>

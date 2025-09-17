@@ -417,7 +417,7 @@ export default function Hero() {
                 visible: { opacity: 1, x: 0, rotate: 0 },
               }}
               transition={{ duration: 1 }}
-              className="hidden sm:block relative flex-1 aspect-[4/5] max-w-[40%]"
+              className="hidden sm:block relative flex-1 aspect-[4/5] max-w-[44%]"
             >
               <Image
                 src="/assets/angel_1.webp"
@@ -434,7 +434,7 @@ export default function Hero() {
                 visible: { opacity: 1, x: 0, rotate: 0 },
               }}
               transition={{ duration: 1 }}
-              className="hidden sm:block relative w-full aspect-[4/5] sm:flex-1 sm:max-w-[40%]"
+              className="hidden sm:block relative w-full aspect-[4/5] sm:flex-1 sm:max-w-[44%]"
             >
               <Image
                 src="/assets/angel_2.webp"
