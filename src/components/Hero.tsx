@@ -46,15 +46,15 @@ type Leaf = {
 // }));
 
 export default function Hero() {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
-  const [form, setForm] = useState({
-    fullName: "",
-    email: "",
-    attending: "",
-  });
-  const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  // const [form, setForm] = useState({
+  //   fullName: "",
+  //   email: "",
+  //   attending: "",
+  // });
+  // const [loading, setLoading] = useState(false);
+  // const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [leaves, setLeaves] = useState<Leaf[]>([]);
 
   useEffect(() => {
