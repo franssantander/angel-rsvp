@@ -43,7 +43,7 @@ export default function RvspForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+ const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!validate()) return;
@@ -66,7 +66,6 @@ export default function RvspForm() {
       }
 
       if (existing) {
-        // ✏️ Update attending only
         const { error: updateError } = await supabase
           .from("rsvps")
           .update({ attending: form.attending === "true" })
