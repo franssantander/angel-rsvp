@@ -15,24 +15,38 @@ const images = [
   "/assets/SCM-4.jpeg",
 ];
 
-// ✅ custom hook (no map inside)
-function useImageTransforms(
-  scrollYProgress: MotionValue<number>,
-  count: number
-) {
-  const transforms: MotionValue<string>[] = [];
 
-  for (let i = 0; i < count; i++) {
-    transforms.push(
-      useTransform(
-        scrollYProgress,
-        [i / (count + 0), (i + 1) / (count + 1)],
-        ["100%", "0%"]
-      )
-    );
-  }
+interface SlidingImageProps {
+  src: string;
+  index: number;
+  scrollYProgress: MotionValue<number>;
+  totalImages: number;
+}
 
-  return transforms;
+function SlidingImage({
+  src,
+  index,
+  scrollYProgress,
+  totalImages,
+}: SlidingImageProps) {
+  const x = useTransform(
+    scrollYProgress,
+    [index / totalImages, (index + 1) / totalImages],
+    ["100%", "0%"],
+    { clamp: true }
+  );
+
+  return (
+    <MotionImage
+      src={src}
+      alt={`Slide ${index + 1}`}
+      fill
+      sizes="100vw"
+      quality={100}
+      className="absolute object-cover"
+      style={{ x }}
+    />
+  );
 }
 
 export default function SlideImages() {
@@ -42,12 +56,8 @@ export default function SlideImages() {
     offset: ["start start", "end end"],
   });
 
-  // ✅ safe usage of hook
-  const transforms = useImageTransforms(scrollYProgress, images.length - 1);
-
   return (
     <div ref={containerRef} className="relative h-[400vh] w-full">
-      {/* Default background image */}
       <Image
         src={images[0]}
         alt="Default background"
@@ -58,18 +68,16 @@ export default function SlideImages() {
 
       <div className="sticky top-0 min-h-screen flex items-center justify-center overflow-hidden">
         {images.slice(1).map((src, i) => (
-          <MotionImage
+          <SlidingImage
             key={i}
             src={src}
-            alt={`Slide ${i + 1}`}
-            fill
-            sizes="100vw"
-            quality={100}
-            className="absolute object-cover"
-            style={{ x: transforms[i] }}
+            index={i}
+            scrollYProgress={scrollYProgress}
+            totalImages={images.length - 1}
           />
         ))}
       </div>
     </div>
   );
 }
+
