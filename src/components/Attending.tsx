@@ -1,4 +1,5 @@
 import React from "react";
+import RvspForm from "./RvspForm";
 
 export default function Attending() {
   return (
@@ -13,6 +14,7 @@ export default function Attending() {
             your place at this special celebration.
           </p>
         </div>
+        <RvspForm />
       </div>
     </section>
   );

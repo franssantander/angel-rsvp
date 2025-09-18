@@ -177,7 +177,12 @@ export default function RvspForm() {
               Submitting...
             </>
           )}
-          {!loading && "Submit RSVP"}
+          {!loading && (
+            <>
+              <Icon icon="tabler:mail-heart" fontSize={24} />
+              <span>Submit RSVP</span>
+            </>
+          )}
         </Button>
       </div>
     </form>

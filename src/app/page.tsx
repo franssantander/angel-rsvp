@@ -7,6 +7,7 @@ import Gifts from "@/components/Gifts";
 import Hero from "@/components/Hero";
 // import Navbar from "@/components/Navbar";
 import Parts from "@/components/Parts";
+import SlideImages from "@/components/SlideImages";
 import Welcome from "@/components/Welcome";
 import WhenWhere from "@/components/WhenWhere";
 import parts from "@/data/parts.json";
@@ -23,6 +24,9 @@ export default function page() {
       <main className="h-full scroll-smooth scroll-snap-y scroll-snap-mandatory">
         <section id="home" className="h-screen scroll-snap-start">
           <Hero />
+        </section>
+        <section>
+          <SlideImages />
         </section>
         <section
           id="parts"
@@ -51,7 +55,7 @@ export default function page() {
         <section className="min-h-screen lg:h-screen scroll-snap-start">
           <Parts
             title="Candle of Wisdom"
-            img="/assets/candles-img.jpeg"
+            img="/assets/candles_of_wisdom.jpg"
             data={candlesData}
           />
         </section>
