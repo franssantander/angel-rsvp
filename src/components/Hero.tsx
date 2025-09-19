@@ -184,6 +184,7 @@ export default function Hero() {
           <Image
             src="/assets/leaf.png"
             alt="leaf"
+            quality={100}
             width={leaf.size}
             height={leaf.size}
             className="opacity-80"
@@ -211,6 +212,7 @@ export default function Hero() {
           <Image
             src="/assets/main-invitation.jpg"
             alt="Hero Image"
+            quality={100}
             fill
             className="object-cover"
             priority
@@ -222,6 +224,7 @@ export default function Hero() {
           <Image
             src="/assets/main-invitation.jpg"
             alt="Angel Mobile Hero"
+            quality={100}
             fill
             className="object-cover"
             priority
